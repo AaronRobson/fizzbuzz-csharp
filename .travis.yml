@@ -1,8 +1,8 @@
 language: csharp
-solution: BaseConv.sln
+solution: FizzBuzz.sln
 install:
-  - nuget restore BaseConv.sln
+  - nuget restore FizzBuzz.sln
   - nuget install NUnit.Runners -Version 3.8.0 -OutputDirectory testrunner
 script:
-  - msbuild /p:Configuration=Release BaseConv.sln
-  - mono ./testrunner/NUnit.ConsoleRunner.3.8.0/tools/nunit3-console.exe ./BaseConv.Tests/bin/Release/BaseConv.Tests.dll
+  - msbuild /p:Configuration=Release FizzBuzz.sln
+  - mono ./testrunner/NUnit.ConsoleRunner.3.8.0/tools/nunit3-console.exe ./FizzBuzz.Tests/bin/Release/FizzBuzz.Tests.dll
