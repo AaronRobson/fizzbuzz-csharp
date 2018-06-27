@@ -1,8 +1,8 @@
-﻿using System.Linq;
-
-namespace FizzBuzz.Tests
+﻿namespace FizzBuzz.Tests
 {
+    using System;
     using System.Collections.Generic;
+    using System.Linq;
     using NUnit.Framework;
     using FizzBuzz.Library;
 
@@ -24,6 +24,12 @@ namespace FizzBuzz.Tests
         public string FindValue(int value)
         {
             return _sut.Find(value);
+        }
+
+        [TestCase]
+        public void FindValueThrows()
+        {
+            Assert.Throws<ArgumentException>(() => _sut.Find(0));
         }
 
         [TestCase]
