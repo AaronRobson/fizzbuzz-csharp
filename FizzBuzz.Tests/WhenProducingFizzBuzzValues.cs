@@ -1,5 +1,8 @@
-﻿namespace FizzBuzz.Tests
+﻿using System.Linq;
+
+namespace FizzBuzz.Tests
 {
+    using System.Collections.Generic;
     using NUnit.Framework;
     using FizzBuzz.Library;
 
@@ -21,6 +24,30 @@
         public string FindValue(int value)
         {
             return _sut.Find(value);
+        }
+
+        [TestCase]
+        public void SampleOfGeneratorIsCorrect()
+        {
+            var expected = new List<string>
+            {
+                "1",
+                "2",
+                "Fizz",
+                "4",
+                "Buzz",
+                "Fizz",
+                "7",
+                "8",
+                "Fizz",
+                "Buzz",
+                "11",
+                "Fizz",
+                "13",
+                "14",
+                "FizzBuzz"
+            };
+            Assert.That(_sut.Generate().Take(expected.Count), Is.EquivalentTo(expected));
         }
     }
 }
