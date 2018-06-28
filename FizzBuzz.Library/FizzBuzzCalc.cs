@@ -3,8 +3,9 @@
 namespace FizzBuzz.Library
 {
     using System.Collections.Generic;
+    using Interfaces;
 
-    public class FizzBuzzCalc
+    public class FizzBuzzCalc : IFizzBuzzCalc
     {
         public string Find(int value)
         {
