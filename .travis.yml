@@ -1,8 +1,7 @@
 language: csharp
-solution: FizzBuzz.sln
-install:
-  - nuget restore FizzBuzz.sln
-  - nuget install NUnit.Runners -Version 3.8.0 -OutputDirectory testrunner
+mono: none
+dotnet: 2.0.0
 script:
-  - msbuild /p:Configuration=Release FizzBuzz.sln
-  - mono ./testrunner/NUnit.ConsoleRunner.3.8.0/tools/nunit3-console.exe ./FizzBuzz.Tests/bin/Release/FizzBuzz.Tests.dll
+ - dotnet restore
+ - dotnet build
+ - dotnet test ./FizzBuzz.Tests/FizzBuzz.Tests.csproj

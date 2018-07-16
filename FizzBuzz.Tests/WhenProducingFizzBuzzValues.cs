@@ -1,15 +1,16 @@
-﻿namespace FizzBuzz.Tests
+namespace FizzBuzz.Tests
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using NUnit.Framework;
     using FizzBuzz.Library;
+    using FizzBuzz.Library.Interfaces;
 
     [TestFixture]
     public class WhenProducingFizzBuzzValues
     {
-        private FizzBuzzCalc _sut;
+        private IFizzBuzzCalc _sut;
 
         [SetUp]
         public void Given()
